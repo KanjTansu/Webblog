@@ -1,13 +1,16 @@
 <%- include('partial/header') -%>
-<h1>Home</h1>
-<p><%= homeContent %></p>
-
-<% posts.forEach((post) => {%>
-    <h2><%= post.newTitle %></h2>
-    <p><%= post.newPost.substring(0,100) + "..."%><a href="/post/<%=post.newTitle%>" > Readmore </a></p>
+    <div class="card">
+        <div class="home-content card-body">
+            <h1>Home</h1>
+            <p><%= homeContent %></p>
+        </div>
+    </div>
     
-<%});%>
-<a class="btn btn-primary" href="/compose" role="button">New post!</a>
-
-
+    <% posts.forEach((post)=> {%>
+        <div class="card blog-post">
+            <h2><%= post.newTitle %></h2>
+            <p><%= post.newPost.substring(0,100) + "..." %><a href="/post/<%=post.newTitle%>"> Readmore </a></p>
+        </div>
+    <%});%>
+    <a class="btn" href="/compose" role="button">New post!</a>
 <%- include('partial/footer') -%>
